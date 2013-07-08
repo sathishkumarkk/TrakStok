@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package in.jugchennai.javamoney.trakstok.boundary;
+package in.jugchennai.javamoney.trakstok.ui.page;
 
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
+import org.jrebirth.core.exception.CoreException;
+import org.jrebirth.core.ui.DefaultController;
 
 /**
  *
  * @author gshenoy
  */
-public abstract class AsyncService<Object> extends Service<Object> {
-    
-    public AsyncService() {
-        super();
+public class PageController extends DefaultController<PageModel, PageView> {
+
+    /**
+     * Default Constructor.
+     *
+     * @param view the view to control
+     *
+     * @throws CoreException if an error occurred while creating event handlers
+     */
+    public PageController(final PageView view) throws CoreException {
+        super(view);
     }
-                
-    @Override
-    protected abstract Task<Object> createTask();
-    
 }
